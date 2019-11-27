@@ -30,6 +30,9 @@ public class BatchConfig {
  
     @Autowired
     private StepBuilderFactory steps;
+    
+    private Resource outputResource = new FileSystemResource("output/outputData.txt");
+    
      
     @Bean
     public FlatFileItemReader<FileInput> reader() 
@@ -63,8 +66,6 @@ public class BatchConfig {
 	ItemProcessor<FileInput, List<String>> fileProcessor() {
 		return new FileProcessor();
 	}
-    
-    private Resource outputResource = new FileSystemResource("output/outputData.txt");
     
     @Bean
     public FlatFileItemWriter<List<String>> writer() 

@@ -56,15 +56,12 @@ public class FileProcessorTestConfig {
 	public void testReadFlatFileToModel() throws UnexpectedInputException, ParseException, Exception {
 		
 		FileInput fi = new FileInput() ;
-		fi.setFilePath("C:\\Users\\shrut\\Documents\\InputFile.txt");
-		fi.setThreadCount(3);
+		fi.setFilePath("C:\\Users\\shrut\\Documents\\InputFile.txt"); //path to input file to be encrypted
+		fi.setThreadCount(4);
 		
 		reader.open(executionContext);
 		FileInput fi2 = reader.read();
-		/*
-		 * if(fi.getFilePath() == fi2.getFilePath() &&
-		 * fi.getThreadCount()==fi2.getThreadCount()) assert true;
-		 */
+		
 		
 		Assert.assertEquals(fi.getFilePath(), fi2.getFilePath());
 		Assert.assertEquals(fi.getThreadCount(), fi2.getThreadCount());

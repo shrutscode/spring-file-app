@@ -3,9 +3,7 @@ package com.exercise.batch.config;
 import static java.lang.Math.toIntExact;
 
 import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
@@ -135,13 +133,7 @@ public class FileProcessor implements ItemProcessor<FileInput, List<String> >, R
 
             sb.append((char) c);
         }
-//        try {
-//        writeToFile(sb);
-//        }
-//        catch(IOException fe) {
-//        	System.out.println("Error in writing to file");
-//        	
-//        }
+
          encryptedList.add(sb.toString());
         return "";
     	

@@ -26,8 +26,11 @@ public class App  implements CommandLineRunner
         SpringApplication.run(App.class, args);
     }
  
+    /**
+     * Run the job every day at 9
+     */
     @Override
-    //@Scheduled(cron = "0/5 * * * * ?")
+    //@Scheduled(cron = ""0 0 9 * * *"")
     public void run(String... args) throws Exception 
     {
         JobParameters params = new JobParametersBuilder()
